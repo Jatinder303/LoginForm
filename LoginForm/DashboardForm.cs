@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace LoginForm
 {
-    public partial class RegForm : Form
+    public partial class DashboardForm : Form
     {
-        DatabaseConnection Obj_data = new DatabaseConnection();
-        public RegForm()
+        public DashboardForm()
         {
             InitializeComponent();
-        }
-
-        private void btn_Submit_Click(object sender, EventArgs e)
-        {
-            string message = Obj_data.Registration(txt_UserName.Text, txt_Email.Text, txt_Password.Text);
-            MessageBox.Show(message);
-            txt_UserName.Text = "";
-            txt_Email.Text = "";
-            txt_Password.Text = "";
         }
 
         private void btn_Back_Click(object sender, EventArgs e)
@@ -33,6 +23,11 @@ namespace LoginForm
             var LoginForm_Obj = new LoginForm();
             LoginForm_Obj.Closed += (s, args) => this.Close();
             LoginForm_Obj.Show();
+        }
+
+        private void btn_Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

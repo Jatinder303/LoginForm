@@ -11,12 +11,53 @@ namespace LoginForm
     {
         private SqlConnection Obj_Conn = new SqlConnection();
         private SqlCommand Cmd = new SqlCommand();
+        private SqlDataReader Reader_Login;
         string QueryString;
 
         public DatabaseConnection()
         {
             string ConnString = @"Data Source=LAPTOP-RAKIOMBV;Initial Catalog=Libaray;Integrated Security=True";
             Obj_Conn.ConnectionString = ConnString;
+        }
+        
+        public string Login(string username, string password)
+        {
+            try
+            {
+                Cmd.Connection = Obj_Conn;
+                QueryString = "Select UserName, Password from UserDetails where UserName =  @UserName  and Password =  @Password ";
+                Cmd.Parameters.AddWithValue("@UserName", username);
+                Cmd.Parameters.AddWithValue("@Password", password);
+
+                Cmd.CommandText = QueryString;
+                //connection opened
+                Obj_Conn.Open();
+
+                // get data stream
+                Reader_Login = Cmd.ExecuteReader();
+
+                if (Reader_Login.HasRows)
+                {
+                    return "User Login Successfully"; ;
+                }
+                else
+                {
+                    return "User details are not correct";
+                }
+            }
+            catch (Exception ex)
+            {
+                // show error Message
+                return ex.Message;
+            }
+            finally
+            {
+                // close connection
+                if (Obj_Conn != null)
+                {
+                    Obj_Conn.Close();
+                }
+            }
         }
 
         public string Registration(string UserName, string Email, string Password)
@@ -40,7 +81,7 @@ namespace LoginForm
                 // Executed query
                 Cmd.ExecuteNonQuery();
 
-                return "Movie is inserted Successfully";
+                return "User registered Successfully";
             }
             catch (Exception ex)
             {

@@ -35,6 +35,7 @@
             this.txt_Email = new System.Windows.Forms.TextBox();
             this.txt_Password = new System.Windows.Forms.TextBox();
             this.btn_Submit = new System.Windows.Forms.Button();
+            this.btn_Back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_UserName
@@ -90,19 +91,30 @@
             // 
             // btn_Submit
             // 
-            this.btn_Submit.Location = new System.Drawing.Point(231, 252);
+            this.btn_Submit.Location = new System.Drawing.Point(285, 241);
             this.btn_Submit.Name = "btn_Submit";
-            this.btn_Submit.Size = new System.Drawing.Size(229, 62);
+            this.btn_Submit.Size = new System.Drawing.Size(165, 62);
             this.btn_Submit.TabIndex = 6;
             this.btn_Submit.Text = "Submit";
             this.btn_Submit.UseVisualStyleBackColor = true;
             this.btn_Submit.Click += new System.EventHandler(this.btn_Submit_Click);
+            // 
+            // btn_Back
+            // 
+            this.btn_Back.Location = new System.Drawing.Point(558, 327);
+            this.btn_Back.Name = "btn_Back";
+            this.btn_Back.Size = new System.Drawing.Size(151, 76);
+            this.btn_Back.TabIndex = 7;
+            this.btn_Back.Text = "Back";
+            this.btn_Back.UseVisualStyleBackColor = true;
+            this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
             // 
             // RegForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_Back);
             this.Controls.Add(this.btn_Submit);
             this.Controls.Add(this.txt_Password);
             this.Controls.Add(this.txt_Email);
@@ -126,6 +138,7 @@
         private System.Windows.Forms.TextBox txt_Email;
         private System.Windows.Forms.TextBox txt_Password;
         private System.Windows.Forms.Button btn_Submit;
+        private System.Windows.Forms.Button btn_Back;
     }
 }
 
