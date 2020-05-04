@@ -35,7 +35,6 @@ namespace LoginForm
 
                 // get data stream
                 Reader_Login = Cmd.ExecuteReader();
-
                 if (Reader_Login.HasRows)
                 {
                     return "User Login Successfully"; ;
