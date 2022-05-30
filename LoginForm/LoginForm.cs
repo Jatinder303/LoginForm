@@ -12,7 +12,8 @@ namespace LoginForm
 {
     public partial class LoginForm : Form
     {
-        DatabaseConnection Obj_data = new DatabaseConnection();
+        Login_Class Obj_data = new Login_Class();
+
         public LoginForm()
         {
             InitializeComponent();

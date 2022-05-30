@@ -52,7 +52,8 @@
     <Compile Include="DashboardForm.Designer.cs">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseConnection.cs" />
+    <Compile Include="Registration_Class.cs" />
+    <Compile Include="Login_Class.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>

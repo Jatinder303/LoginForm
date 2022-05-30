@@ -12,7 +12,7 @@ namespace LoginForm
 {
     public partial class RegForm : Form
     {
-        DatabaseConnection Obj_data = new DatabaseConnection();
+        Registration_Class Obj_Reg = new Registration_Class();
         public RegForm()
         {
             InitializeComponent();
@@ -20,7 +20,7 @@ namespace LoginForm
 
         private void btn_Submit_Click(object sender, EventArgs e)
         {
-            string message = Obj_data.Registration(txt_UserName.Text, txt_Email.Text, txt_Password.Text);
+            string message = Obj_Reg.Registration(txt_UserName.Text, txt_Email.Text, txt_Password.Text);
             MessageBox.Show(message);
             txt_UserName.Text = "";
             txt_Email.Text = "";
